@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from 'react'
+import Header from './components/Header'
+import {Route,Switch,Router} from 'react-router-dom'
+import Intro from './components/Intro'
+import MyWork from './components/MyWork'
+import Contact_me from './components/Contact_me'
+import Test from './components/Test'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from './components/Footer'
+import {BrowserRouter} from 'react-router-dom'/* Browser Router will wrap all the router when you push the routes from "Home" to "About" etc,Browser Router knows the application state which route to render ,the path name etc */
+import MainRouter from './MainRouter'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+ const App = () => {
+    return (
+        <>
+        <BrowserRouter>
+        <MainRouter/>
+        </BrowserRouter>
+     </>
+    )
 }
-
 export default App;

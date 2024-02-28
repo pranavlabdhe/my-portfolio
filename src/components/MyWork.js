@@ -55,7 +55,7 @@ const MyWork = () => {
  {/* https://budgettt.netlify.app/ */}
     <p class="section__subtitle section__subtitle--work p-5">Projects</p>
     <div class="portfolio">
-                <a href="https://watch-wise-movie-recommendation.netlify.app/" class="portfolio__item"target="_blank">
+                <a href="https://youtube-thumbnail-downloader-three.vercel.app/" class="portfolio__item"target="_blank">
                 <img src="/images/thumbnail_downloader.png" alt="portfolio 2"class="portfolio__img"/>
             </a>
             <a href="https://medium-blog-post.onrender.com/" class="portfolio__item"target="_blank">

@@ -23,7 +23,7 @@ const Footer = () => {
             </a></li>
         </ul>
         <h3>PRANAV LABDHE.</h3>
-        <h3 class="rights">ALL RIGHTS RESERVED 2021.</h3>
+        <h3 class="rights">ALL RIGHTS RESERVED 2024.</h3>
         </footer>
         </div>
     )

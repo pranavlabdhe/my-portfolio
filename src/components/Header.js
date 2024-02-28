@@ -1,100 +1,54 @@
-import React from 'react'
-import styled from 'styled-components'
-import '../App.css'
-// import { Link } from 'react-router-dom'
-import { HashLink as Link } from 'react-router-hash-link'
+import React, { useState } from 'react';
+import { HashLink as Link } from 'react-router-hash-link';
 
 const Header = () => {
-    return (
-        <Nav>
-          <Link to="/"><Logo src="images/logo.png" /></Link>
-            <Title><h1>WEB-GUY</h1></Title>
-        <NavMenu>
-           <Link  to="/"><span>ABOUT-ME</span></Link>
-            <Link to="/mywork"><span>MY-PROJECTS</span></Link>
-            <Link to="/contactme"><span>CONTACT-ME</span></Link>
-            <Link to="/myresume"><span>MY-RESUME</span></Link>
-            </NavMenu>  
-        </Nav>
-    )
-}
-const Nav = styled.div`
-        display:grid;
-        grid-template-columns: 300px 700px 1fr;
-        grid-template-rows:auto;
-        background:#fefefa;
-        border-bottom:2px solid black;
-        @media (max-width: 768px) {
-            display:grid;
-            grid-template-columns:1fr;
-            grid-template-rows:auto 70px auto;
-            padding-bottom:2em;
-        }
-        `
-const Title = styled.h1`
-    text-align:center;
-    margin-top:1em;
-    font-weight:bold;
-    @media (max-width: 768px) {
-        display:grid;
-        align-self:center;
-        font-size:2em;
-        padding-bottom:0em;
-        padding-top:0em;
-        }
-`     
-const Logo =styled.img`
-    width:100px;
-    margin-top:1em;
-    margin-left:3em;
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
-    @media (max-width: 768px) {
-        display:grid;
- 
-        margin-left:auto;
-        margin-right:auto;
-    }
-    `
-    const NavMenu = styled.div`
-    display:flex;
-    flex:1;
-    margin-left:25px;
-    @media (max-width: 768px){
-        display:grid;
-        grid-template-column:1fr;
-        grid-template-row:auto;
-        place-self:center;
-    }
-    @media (max-width: 768px){ 
-        a{
-       margin-top: 2em;
-      }
-      }
-    a{
-        display:flex;
-        align-items:center;
-        padding:0 12px;
-        cursor:pointer;
-        text-decoration:none;
-        color:black;
-        transition: 0.5s;
-     
-    }
-    a:hover{
-        color:red;
-       
-    }
-        img{
-            height:20px;    
-        }
-        span{
-            font-size:13px;
-            letter-spacing:1.42px;
-            position:relative;
-            font-weight:bold; 
-        }
-        }
-    }
-`
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
 
-export default Header
+  return (
+    <div className="p-4 home_bg">
+      <div className="header_div " >
+        <div className="flex title_menu mb-2 md:mb-0">
+          <h1 className="text-2xl font-bold text-white animate__animated animate__fadeIn animate__delay-1s">
+            PRANAV LABDHE
+          </h1>
+          <button
+            onClick={toggleMenu}
+            className=" ml-2 text-white focus:outline-none toggle_menu"
+            aria-label="Toggle Menu"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="h-6 w-6"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+        <div
+          className={`md:flex ${isMenuOpen ? 'mobile_view' : 'hidden laptop_view'}  `}>
+          <Link to="/"  className="link_effect">
+            About Me
+          </Link>
+          <Link to="/mywork"  className="link_effect">
+            My Projects
+          </Link>
+          <Link to="/contact-me"  className="link_effect">
+            Contact Me
+          </Link>
+          <Link to="/myresume" className="link_effect">
+            My Resume
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Header;
